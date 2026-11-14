@@ -10,7 +10,8 @@ Claude 같은 MCP 클라이언트에 연결하면 "이번 주말 경주 카페 �
 
 ```
 new-mcp/
-├─ .mcp.json               # Claude Code용 MCP 서버 등록 파일
+├─ .mcp.json.example       # Claude Code용 MCP 서버 등록 양식 (경로는 예시)
+├─ .mcp.json               # 실제 등록 파일 (직접 만들며, 깃허브에 올라가지 않음)
 ├─ .gitignore
 └─ gyeongju-cafe-mcp/
    ├─ server.py            # MCP 서버 본체
@@ -115,14 +116,18 @@ GOOGLE_PLACES_API_KEY=발급받은_키
 
 ### Claude Code
 
-저장소 최상위의 `.mcp.json`이 서버를 등록합니다. 이 파일에는 **작성자 PC의 절대 경로**가 들어 있으므로, 다른 PC에서는 두 경로를 자기 폴더 위치에 맞게 고쳐야 합니다.
+저장소 최상위의 `.mcp.json`이 서버를 등록합니다. 이 파일에는 내 PC의 절대 경로가 들어가기 때문에 저장소에는 양식인 `.mcp.json.example`만 들어 있습니다. 양식을 복사한 뒤 두 경로를 자기 폴더 위치에 맞게 고칩니다.
+
+```powershell
+Copy-Item .mcp.json.example .mcp.json
+```
 
 ```json
 {
   "mcpServers": {
     "gyeongju-cafe": {
-      "command": "C:\\내\\경로\\new-mcp\\gyeongju-cafe-mcp\\.venv\\Scripts\\python.exe",
-      "args": ["C:\\내\\경로\\new-mcp\\gyeongju-cafe-mcp\\server.py"],
+      "command": "C:\\path\\to\\new-mcp\\gyeongju-cafe-mcp\\.venv\\Scripts\\python.exe",
+      "args": ["C:\\path\\to\\new-mcp\\gyeongju-cafe-mcp\\server.py"],
       "env": { "PYTHONUTF8": "1" }
     }
   }

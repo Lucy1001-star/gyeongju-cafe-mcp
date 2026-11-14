@@ -50,6 +50,8 @@ $RECYCLE.BIN/
 .DS_Store
 
 # ── 에디터 · 도구 로컬 설정 ─────────────────────────────
+# .mcp.json 에는 내 PC의 절대 경로가 들어가므로 올리지 않는다. (.mcp.json.example 참고)
+.mcp.json
 .vscode/
 .idea/
 .claude/settings.local.json

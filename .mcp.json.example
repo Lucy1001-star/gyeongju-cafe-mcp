@@ -1,0 +1,11 @@
+{
+  "mcpServers": {
+    "gyeongju-cafe": {
+      "command": "C:\\path\\to\\new-mcp\\gyeongju-cafe-mcp\\.venv\\Scripts\\python.exe",
+      "args": ["C:\\path\\to\\new-mcp\\gyeongju-cafe-mcp\\server.py"],
+      "env": {
+        "PYTHONUTF8": "1"
+      }
+    }
+  }
+}
